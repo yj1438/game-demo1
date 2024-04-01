@@ -4,7 +4,7 @@ const { ccclass, property } = _decorator;
 @ccclass('RoleController')
 export class RoleController extends Component {
     
-    @property
+    @property(Number)
     speed: number = 30;
     
     private man: Node = null;
@@ -60,7 +60,7 @@ export class RoleController extends Component {
                 this.node.setScale(-1, 1, 1);
                 this.node.setPosition(this.node.position.x - this.speed, this.node.position.y, this.node.position.z);
                 break;
-                case 'right':
+            case 'right':
                 this.node.setScale(1, 1, 1);
                 this.node.setPosition(this.node.position.x + this.speed, this.node.position.y, this.node.position.z);
                 break;

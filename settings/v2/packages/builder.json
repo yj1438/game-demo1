@@ -3,17 +3,49 @@
   "splash-setting": {
     "totalTime": 500,
     "logo": {
-      "type": "custom",
+      "type": "default",
       "image": "project://settings/背景.png"
     },
     "displayRatio": 6.8,
     "background": {
-      "type": "color",
+      "type": "default",
       "color": {
         "x": 0.01568627450980392,
         "y": 0.0392156862745098,
         "z": 0.01568627450980392,
         "w": 1
+      }
+    }
+  },
+  "bundleConfig": {
+    "custom": {
+      "default": {
+        "displayName": "i18n:builder.asset_bundle.defaultConfig",
+        "configs": {
+          "native": {
+            "preferredOptions": {
+              "isRemote": false,
+              "compressionType": "merge_all_json"
+            }
+          },
+          "web": {
+            "preferredOptions": {
+              "isRemote": false,
+              "compressionType": "merge_all_json"
+            },
+            "fallbackOptions": {
+              "compressionType": "merge_dep"
+            },
+            "overwriteSettings": {}
+          },
+          "miniGame": {
+            "fallbackOptions": {
+              "isRemote": false,
+              "compressionType": "merge_dep"
+            },
+            "configMode": "fallback"
+          }
+        }
       }
     }
   }

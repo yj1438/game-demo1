@@ -1,4 +1,5 @@
-import { _decorator, Collider2D, Component, Contact2DType, IPhysics2DContact, CircleCollider2D, RigidBody2D, Delaunay } from 'cc';
+import { _decorator, Collider2D, Component, Contact2DType, IPhysics2DContact, CircleCollider2D, RigidBody2D, director } from 'cc';
+import { GAME_EVENT } from './common/Event';
 const { ccclass } = _decorator;
 
 @ccclass('ItemController')
@@ -38,8 +39,10 @@ export class ItemController extends Component {
         this.scheduleOnce(() => {
             rigidBody.enabled = false;
             rigidBody.destroy();
-            // this.node.active = false;
-            // this.node.destroy();
+            this.node.active = false;
+            this.node.destroy();
+            // 事件通知
+            director.getScene().emit(GAME_EVENT.ITEM_FETCHED, this.node);
         }, 0);
     }
 
