@@ -3,7 +3,7 @@
   "splash-setting": {
     "totalTime": 500,
     "logo": {
-      "type": "default",
+      "type": "none",
       "image": "project://settings/背景.png"
     },
     "displayRatio": 6.8,

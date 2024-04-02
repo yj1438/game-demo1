@@ -44,8 +44,6 @@ export class RoleController extends Component {
     start() {
         this.man = this.node.getChildByName('Man');
         this.circle = this.node.getChildByName('Circle');
-
-        console.log('Hello, I am Actor!', this.man, this.circle)
     }
 
     update(deltaTime: number) {
